@@ -19,5 +19,6 @@ development:
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 production:
-  <<: *default
-  database: prod_test_your_memory
+  database: heroku_b93dbe51f90631d
+  username: b3bcf9d1d9facb
+  password: 9991f9ba
