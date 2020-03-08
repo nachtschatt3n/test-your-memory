@@ -1,6 +1,35 @@
-<h1 class="cover-heading">Your score is 34.</h1>
-<p class="lead">Thanks for takeing the test.</p>
+<br><br><br><br><br><br><br><br><br>
+<% unless @questions_incorrect >= Question.all.count %>
+  <h1 class="cover-heading">You answered <%= @questions_incorrect %> questions wrong</h1>
+<% else %>
+  <h1 class="cover-heading">You answered all questions wrong</h1>
+<% end %>
+<p class="lead">Please be sure to write this number down in the yellow box. Thanks for takeing the test.</p>
 <p class="lead">
 
-  <%= link_to "Continue","https://docs.google.com/forms/d/e/1FAIpQLSfOpya_em8vT-POiG2aEqAVYhw7Og5ull0mstVcXyh4RIqRwA/viewform", class:"btn btn-lg btn-secondary" %>
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+  Continue
+</button>  
 </p>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Important</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure that you wrote your number incorrect in the yellow box
+      </div>
+      <div class="modal-footer">
+        <%= link_to "Continue","https://docs.google.com/forms/d/e/1FAIpQLSfOpya_em8vT-POiG2aEqAVYhw7Og5ull0mstVcXyh4RIqRwA/viewform", class:"btn btn-lg btn-secondary" %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,27 +1,9 @@
 <p class="lead">
-  <h3 class="hidden">
-  Server Mode: <%= @mode %>  <br>
-  Session Mode: <%= session[:mode] %> <br>
-  Session Question ID: <%= session[:question_id] %> <br>
-  Session Image ID: <%= session[:image_id] %> <br>
-  Session Score: <%= session[:score] %> <br>
-  </h3>
 
-  <% if session[:mode] == "image" %>
-    <% if @image %>
-      <%= render "image"%>
-    <% else %>
-      No Image ?!
-    <% end %>  
-  <% end %>
 
-  <% if session[:mode] == "question" %>
-    <% if @question %>
-      <%= render "question"%>
-    <% else %>
-      No Question ?!
-    <% end %>  
-  <% end %>
+  <%= render "image"%>
+  <%= render "question"%>
+
 </p>
 
 

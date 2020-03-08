@@ -1,12 +1,14 @@
-<%= image_tag @image.src.url(:medium) %>
+<%= image_tag @image.src.url(:medium), id: "image" %>
 
 <script type="text/javascript">
 
 window.onload = function() {
   setTimeout(function() {
-    document.getElementById('confirm_image-<%= @image.id %>').click();
-  }, 3000);
+    $('#image').fadeOut("fast", 
+      function() {
+        $('#question').fadeIn();
+      }
+    )
+  }, 5000);
 };
 </script>
-
-<%= link_to "confirm_image", image_shown_path(@image.id), method: :put, class: "hidden",  id: "confirm_image-#{@image.id}" %>
