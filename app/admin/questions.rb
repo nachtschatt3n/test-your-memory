@@ -14,11 +14,7 @@ ActiveAdmin.register Question do
     column :label
     actions
   end
-              
-
-
-
-
+  
   form do |f|
     f.inputs do
       f.input :image_id, as: :select, collection: Image.all
