@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_08_130106) do
+ActiveRecord::Schema.define(version: 2020_03_08_150141) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -54,6 +54,7 @@ ActiveRecord::Schema.define(version: 2020_03_08_130106) do
     t.string "src_content_type"
     t.integer "src_file_size"
     t.datetime "src_updated_at"
+    t.string "label"
   end
 
   create_table "questions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

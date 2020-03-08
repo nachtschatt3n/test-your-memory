@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   
   ActiveAdmin.routes(self)
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'welcome#index'
+  get 'game', to: 'game#index'
+  put 'image_shown/:id', to: 'game#image_shown', as: :image_shown
+  put 'answer_question/:id', to: 'game#answer_question', as: :answer_question
   
   devise_for :admin_users, ActiveAdmin::Devise.config
 

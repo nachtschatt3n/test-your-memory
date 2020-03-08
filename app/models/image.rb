@@ -1,7 +1,24 @@
 class Image < ApplicationRecord
   has_many :questions
+  accepts_nested_attributes_for :questions, :allow_destroy => true
+  has_attached_file :src, :styles => { :medium => "750x700>", :thumb => "75x70>" }, :default_url => "/images/:style/missing.png"
+  validates_attachment_file_name :src, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
-  has_attached_file :src, styles: { normal: "750x700>", thumb: "75x70>" }, default_url: "/images/:style/missing.png"
-  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  #do_not_validate_attachment_file_type :src
+
+
+
+  def to_s
+    label
+  end
+  
+
+  def next
+    Image.where("id > ?", id).first
+  end
+
+  def prev
+    Image.where("id < ?", id).last
+  end
 
 end

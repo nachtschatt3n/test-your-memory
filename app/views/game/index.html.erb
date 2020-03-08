@@ -1,0 +1,13 @@
+
+<h3>
+Debug: <br>
+Mode: <%= @mode %>  session: <%= session[:mode] %><br>
+</h3>
+
+<% if session[:mode] == "image" %>
+  <%= render "image"%>
+<% end %>
+
+<% if session[:mode] == "question" %>
+  <%= render "question"%>
+<% end %>

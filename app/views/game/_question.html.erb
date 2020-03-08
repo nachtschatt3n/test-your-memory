@@ -1,0 +1,6 @@
+
+<%= @question.label %>
+
+<% @question.answers.each do |q| %>
+  <%= render "answer", answer: q %>
+<% end %>

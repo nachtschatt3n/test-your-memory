@@ -34,15 +34,15 @@ gem 'jbuilder', '~> 2.5'
 gem "therubyracer"
 gem "less-rails"
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-gem "paperclip", "~> 6.0.0"
-gem 'activeadmin'
+gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem "thor", git:"https://github.com/erikhuda/thor"
 
 # Plus integrations with:
 gem 'devise'
 gem 'cancancan'
 gem 'draper'
 gem 'pundit'
-
+gem 'activeadmin'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
