@@ -4,4 +4,13 @@ class Question < ApplicationRecord
 
   belongs_to :image
   accepts_nested_attributes_for :image, :allow_destroy => true
+
+  def next
+    Question.where("id > ?", id).first
+  end
+
+  def prev
+    Question.where("id < ?", id).last
+  end
+
 end

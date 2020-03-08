@@ -1,2 +1,7 @@
 
-<button type="button" class="btn btn-primary"><%= @answer.label %></button>
+
+<%= link_to answer.label, 
+            answer_question_path(answer.id), 
+            class: "btn btn-primary card-link", 
+            method: :put 
+%>

@@ -1,3 +1,12 @@
 <%= image_tag @image.src.url(:medium) %>
 
-<%= link_to "weiter", image_shown_path(@image.id), method: :put %>
+<script type="text/javascript">
+
+window.onload = function() {
+  setTimeout(function() {
+    document.getElementById('confirm_image-<%= @image.id %>').click();
+  }, 3000);
+};
+</script>
+
+<%= link_to "confirm_image", image_shown_path(@image.id), method: :put, class: "hidden",  id: "confirm_image-#{@image.id}" %>

@@ -1,6 +1,14 @@
 
-<%= @question.label %>
+<div class="card">
+  <div class="card-body">
+    <h3 class="card-title"><%= @question.label %></h3>
 
-<% @question.answers.each do |q| %>
-  <%= render "answer", answer: q %>
-<% end %>
+    <% @question.answers.each do |q| %>
+      <%= render "answer", answer: q %>
+    <% end %>
+
+  </div>
+
+
+
+
